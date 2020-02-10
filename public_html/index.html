@@ -1,13 +1,200 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../src/stylesheet.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
     </head>
     <body>
-        <h1>Avatar Creator</h1>
-        <div class="color-picker">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Avatar Creator</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-5">
+                    <div id="avatar-container" class="avatar-con">
+                        <div class="draggable">
+                            <i id="icon-head" data-type="head" class="icon-head fas fa-hat-wizard"></i>
+                        </div>
+                        <div class="draggable">
+                            <i id="icon-body" data-type="body" class="icon-body fas fa-poop"></i>
+                        </div>
+                        <div class="draggable">
+                            <i id="icon-legs" data-type="legs" class="icon-legs fas fa-arrow-down"></i>
+                        </div>
+                        <div class="draggable">
+                            <i id="icon-feet" data-type="feet" class="icon-feet fas fa-bahai"></i>
+                        </div>
+                    </div>
+                    <br><br>
+                    <label for="size">Size</label><br>
+                    <input type="range" class="custom-range" min="1" max="250" id="size" data-type="head">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="backgroundCheck">
+                        <label class="custom-control-label" for="backgroundCheck">Tick here to target the background colour</label>
+                    </div>
+                    <br>
+                    <div class="color-picker">
+                    </div>
+                    <button id="capture" class="btn btn-primary">
+                        Download as PNG
+                    </button>
+                </div>
+                <div class="col-md-12 col-lg-7">
+                    <ul class="nav nav-tabs nav-fill" id="avatarTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-type="head" id="head-tab" data-toggle="tab" href="#head" role="tab" aria-controls="head" aria-selected="true">Layer 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-type="body" id="body-tab" data-toggle="tab" href="#body" role="tab" aria-controls="body" aria-selected="false">Layer 2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-type="legs" id="legs-tab" data-toggle="tab" href="#legs" role="tab" aria-controls="legs" aria-selected="false">Layer 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-type="feet" id="feet-tab" data-toggle="tab" href="#feet" role="tab" aria-controls="feet" aria-selected="false">Layer 4</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="avatarTabContent">
+                        <div class="tab-pane fade show active p-3" id="head" role="tabpanel" aria-labelledby="head-tab">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 item-con selected head-image-con">
+                                    <i class="fas fa-hat-wizard"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fab fa-redhat"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-hat-cowboy-side"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fab fa-pied-piper-hat"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-headphones"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-horse-head"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade p-3" id="body" role="tabpanel" aria-labelledby="body-tab">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 item-con selected body-image-con">
+                                    <i class="fas fa-poop"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-guitar"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-suitcase"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-apple-alt"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fab fa-angellist"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-basketball-ball"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-bowling-ball"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-broom"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade p-3" id="legs" role="tabpanel" aria-labelledby="legs-tab">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 item-con selected legs-image-con">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-left"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-circle-up"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-circle-down"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-circle-left"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade p-3" id="feet" role="tabpanel" aria-labelledby="feet-tab">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-bahai"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-ambulance"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-adjust"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+            <script type="text/javascript">
+                $(".draggable").draggable({
+                    drag: function(e) {
+                        let element = $(e.target);
+                        let iconType = element.data('type');
+
+                        localStorage.setItem(iconType + 'X', element.css('left'));
+                        localStorage.setItem(iconType + 'Y', element.css('top'));
+                    },
+                    containment: $('.avatar-con')
+                });
+            </script>
+            <script type="text/javascript" src="../src/assets/fontawesome/all.js"></script>
+            <script src="../dist/main.js"></script>
+            
         </div>
-        <script src="../dist/main.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script> -->
     </body>
 </html>

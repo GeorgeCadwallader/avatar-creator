@@ -1,8 +1,61 @@
-body {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+@import './assets/fontawesome/all.css';
+
+.selected svg {
+    border: 3px solid black;
 }
+
+.item-con svg {
+    cursor: pointer;
+    font-size: 75px;
+    padding: 20px;
+}
+
+.item-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container-fluid .pickr .pcr-button {
+    height: 55px;
+    width: 55px;
+}
+
+.avatar-con {
+    height: 450px;
+    width: 100%;
+    background-color: #42445a;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+}
+
+.avatar-con div {
+    position: absolute !important;
+}
+
+.avatar-con svg {
+    position: absolute !important;
+}
+
+/* .item {
+    flex-grow: 1;
+} */
+
+/* .item:first-child {
+    background-color: blue;
+}
+
+.item:nth-child(2) {
+    background-color: red;
+}
+
+.item:nth-child(3) {
+    background-color: purple;
+}
+
+.item:nth-child(4) {
+    background-color: green;
+} */
