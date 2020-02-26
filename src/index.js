@@ -37,12 +37,17 @@ $(window).on('load', function() {
         let x = localStorage.getItem(type + 'X');
         let y = localStorage.getItem(type + 'Y');
 
+        let element = $('#icon-' + type);
+        let parent = element.parent();
+
         if (x) {
-            $('#icon-' + type).css('left', x);
+            element.css('left', x);
+            // parent.css('left', x);
         }
 
         if (y) {
-            $('#icon-' + type).css('top', y);
+            element.css('top', y);
+            // parent.css('top', y);
         }
     }
 
@@ -51,6 +56,14 @@ $(window).on('load', function() {
 
         if (size) {
             $('#icon-' + type).css('font-size', size);
+        }
+    }
+
+    var updateRotation = function(type) {
+        let rotation = localStorage.getItem(type + '-rotate');
+
+        if (rotation) {
+            $('#icon-' + type).css('transform', 'rotate(' + rotation + 'deg)');
         }
     }
 
@@ -67,6 +80,7 @@ $(window).on('load', function() {
         setIcon(value);
         updatePosition(value);
         updateSize(value);
+        updateRotation(value);
     });
 });
 
@@ -181,12 +195,18 @@ $(document).ready(function () {
 
     $('.nav-link').on('click', function() {
         let sizeType = $('#size').data('type');
+        let rotateType = $('#rotate').data('type');
         let navType = $(this).data('type');
         let iconSize = $('#icon-' + navType).css('font-size');
 
         if (navType !== sizeType) {
             $('#size').data('type', navType);
             $('#size').val(iconSize.replace(/\D/g, ''));
+        }
+
+        if (navType !== rotateType) {
+            $('#rotate').data('type', navType);
+            $('#rotate').val(iconSize.replace(/\D/g, ''));
         }
     });
 
@@ -197,13 +217,31 @@ $(document).ready(function () {
         localStorage.setItem(type + '-size', $(this).val() + 'px');
     });
 
-    $('#capture').on('click', function() {
+    $('#rotate').on('input', function() {
+        let type = $(this).data('type');
 
+        $('#icon-' + type).css('transform', 'rotate(' + $(this).val() + 'deg)');
+        localStorage.setItem(type + '-rotate', $(this).val());
+    });
+
+    $(".hide-layer").change(function() {
+        let type = $(this).data('type');
+        let icon = $('#icon-' + type);
+
+        if(this.checked) {
+            icon.css('display', 'none');
+        } else {
+            icon.css('display', 'block');
+        }
+    });
+
+    $('#capture').on('click', function() {
         domtoimage.toPng(document.getElementById('avatar-container'))
         .then(function (dataUrl) {
-            var img = new Image();
-            img.src = dataUrl;
-            document.body.appendChild(img);
+            var link = document.createElement('a');
+            link.download = 'avatr.jpeg';
+            link.href = dataUrl;
+            link.click();
         })
         .catch(function (error) {
             console.error('oops, something went wrong!', error);

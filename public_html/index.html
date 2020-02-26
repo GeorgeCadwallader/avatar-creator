@@ -3,16 +3,20 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../src/stylesheet.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="avatr">
         <div class="container-fluid">
-            <div class="row">
+            <div class="header-background row mb-5 py-3">
                 <div class="col-md-12">
-                    <h1>Avatar Creator</h1>
+                    <h1 class="display-1">
+                        <i class="fas fa-user"></i>
+                        Avatr
+                    </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 col-lg-5">
+                <div class="col-md-12 col-lg-4">
                     <div id="avatar-container" class="avatar-con">
                         <div class="draggable">
                             <i id="icon-head" data-type="head" class="icon-head fas fa-hat-wizard"></i>
@@ -27,21 +31,54 @@
                             <i id="icon-feet" data-type="feet" class="icon-feet fas fa-bahai"></i>
                         </div>
                     </div>
-                    <br><br>
-                    <label for="size">Size</label><br>
-                    <input type="range" class="custom-range" min="1" max="250" id="size" data-type="head">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="backgroundCheck">
-                        <label class="custom-control-label" for="backgroundCheck">Tick here to target the background colour</label>
+                    <div class="row mt-4">
+                        <div class="col-sm-6">
+                            <div class="row my-2">
+                                <div class="col-sm-12 my-3">
+                                    <h3>Size</h3>
+                                    <input type="range" class="custom-range slider" min="1" max="250" id="size" data-type="head">
+                                </div>
+                                <div class="col-sm-12 my-3">
+                                    <h3>Rotation</h3>
+                                    <input type="range" class="custom-range slider" min="1" max="360" id="rotate" data-type="head">
+                                </div>
+                                <div class="col-sm-12 my-3">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="backgroundCheck">
+                                        <label class="custom-control-label" for="backgroundCheck">Tick here to target the background colour</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12 my-3">
+                                    <h3>Color</h3>
+                                    <div class="color-picker ">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <h3>Layer hierarchy</h3>
+                                    <ul id="sortable">
+                                        <li class="ui-state-default" data-type="head">
+                                            Layer 1
+                                        </li>
+                                        <li class="ui-state-default" data-type="body">
+                                            Layer 2
+                                        </li>
+                                        <li class="ui-state-default" data-type="legs">
+                                            Layer 3
+                                        </li>
+                                        <li class="ui-state-default" data-type="feet">
+                                            Layer 4
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="color-picker">
-                    </div>
-                    <button id="capture" class="btn btn-primary">
-                        Download as PNG
-                    </button>
                 </div>
-                <div class="col-md-12 col-lg-7">
+                <div class="col-md-12 col-lg-8">
                     <ul class="nav nav-tabs nav-fill" id="avatarTab" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" data-type="head" id="head-tab" data-toggle="tab" href="#head" role="tab" aria-controls="head" aria-selected="true">Layer 1</a>
@@ -58,6 +95,14 @@
                     </ul>
                     <div class="tab-content" id="avatarTabContent">
                         <div class="tab-pane fade show active p-3" id="head" role="tabpanel" aria-labelledby="head-tab">
+                            <div class="row my-4">
+                                <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input data-type="head" type="checkbox" class="custom-control-input hide-layer" id="displayLayer1">
+                                        <label class="custom-control-label" for="displayLayer1">Hide this layer</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 item-con selected head-image-con">
                                     <i class="fas fa-hat-wizard"></i>
@@ -83,6 +128,14 @@
                             </div>
                         </div>
                         <div class="tab-pane fade p-3" id="body" role="tabpanel" aria-labelledby="body-tab">
+                            <div class="row my-4">
+                                <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input data-type="body" type="checkbox" class="custom-control-input hide-layer" id="displayLayer2">
+                                        <label class="custom-control-label" for="displayLayer2">Hide this layer</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 item-con selected body-image-con">
                                     <i class="fas fa-poop"></i>
@@ -117,6 +170,14 @@
                             </div>
                         </div>
                         <div class="tab-pane fade p-3" id="legs" role="tabpanel" aria-labelledby="legs-tab">
+                            <div class="row my-4">
+                                <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input data-type="legs" type="checkbox" class="custom-control-input hide-layer" id="displayLayer3">
+                                        <label class="custom-control-label" for="displayLayer3">Hide this layer</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 item-con selected legs-image-con">
                                     <i class="fas fa-arrow-down"></i>
@@ -151,6 +212,14 @@
                             </div>
                         </div>
                         <div class="tab-pane fade p-3" id="feet" role="tabpanel" aria-labelledby="feet-tab">
+                            <div class="row my-4">
+                                <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input data-type="feet" type="checkbox" class="custom-control-input hide-layer" id="displayLayer4">
+                                        <label class="custom-control-label" for="displayLayer4">Hide this layer</label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
                                     <i class="fas fa-bahai"></i>
@@ -178,19 +247,40 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button id="capture" class="btn btn-primary">
+                        Download as JPG
+                    </button>
+                </div>
+            </div>
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
             <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
             <script type="text/javascript">
                 $(".draggable").draggable({
                     drag: function(e) {
                         let element = $(e.target);
-                        let iconType = element.data('type');
+                        let iconType = element.children().data('type');
 
                         localStorage.setItem(iconType + 'X', element.css('left'));
                         localStorage.setItem(iconType + 'Y', element.css('top'));
                     },
                     containment: $('.avatar-con')
                 });
+
+                $(function() {
+                    $("#sortable").sortable({
+                        stop: function(e) {
+                            $('#sortable').children().each(function (index, element) {
+                                let i = $(element).index();
+                                let icon = $('#icon-' + $(element).data('type'));
+
+                                icon.css('z-index', i);
+                            });
+                        }
+                    });
+                    $("#sortable").disableSelection();
+                } );
             </script>
             <script type="text/javascript" src="../src/assets/fontawesome/all.js"></script>
             <script src="../dist/main.js"></script>
