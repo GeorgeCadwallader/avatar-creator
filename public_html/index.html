@@ -4,19 +4,54 @@
         <link rel="stylesheet" type="text/css" href="../src/stylesheet.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
         <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
+        <title>Avatr | The avatar creation application</title>
     </head>
     <body class="avatr">
         <div class="container-fluid">
             <div class="header-background row mb-5 py-3">
                 <div class="col-md-12">
-                    <h1 class="display-1">
+                    <h1 class="pl-4 display-1">
                         <i class="fas fa-user"></i>
                         Avatr
                     </h1>
                 </div>
             </div>
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <h2 class="mb-0">Welcome to Avatr!</h2>
+                        <br>
+                        <p class="info-text">
+                            Use this app to create your own custom avatar that you can use for any site!
+                            Apply different shapes from the four layers, change their site, rotation, colour
+                            and layer hierarchy. Adapt all this to your advantage to create whatever you can imagine! After you
+                            have created something you are happy with click the download button and you will
+                            download your creation as a JPG.
+                            <br><br>
+                            See some example creations below of what you can make with Avatr!
+                        </p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <img src="./images/avatar-one.jpeg" alt="Avatar example one" class="img-fluid">
+                </div>
+                <div class="col-md-3">
+                    <img src="./images/avatar-two.jpeg" alt="Avatar example two" class="img-fluid">
+                </div>
+                <div class="col-md-3">
+                    <img src="./images/avatar-three.jpeg" alt="Avatar example three" class="img-fluid">
+                </div>
+                <div class="col-md-3">
+                    <img src="./images/avatar-four.jpeg" alt="Avatar example four" class="img-fluid">
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-5">
                     <div id="avatar-container" class="avatar-con">
                         <div class="draggable">
                             <i id="icon-head" data-type="head" class="icon-head fas fa-hat-wizard"></i>
@@ -78,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-7">
                     <ul class="nav nav-tabs nav-fill" id="avatarTab" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" data-type="head" id="head-tab" data-toggle="tab" href="#head" role="tab" aria-controls="head" aria-selected="true">Layer 1</a>
@@ -111,19 +146,34 @@
                                     <i class="fas fa-hard-hat"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con head-image-con">
-                                    <i class="fab fa-redhat"></i>
+                                    <i class="fab fas fa-brain"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con head-image-con">
                                     <i class="fas fa-hat-cowboy-side"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con head-image-con">
-                                    <i class="fab fa-pied-piper-hat"></i>
+                                    <i class="fas fa-chess-queen"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con head-image-con">
                                     <i class="fas fa-headphones"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con head-image-con">
                                     <i class="fas fa-horse-head"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-concierge-bell"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-hat-cowboy"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-skull"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con head-image-con">
+                                    <i class="fas fa-bed"></i>
                                 </div>
                             </div>
                         </div>
@@ -150,10 +200,10 @@
                                     <i class="fas fa-apple-alt"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con body-image-con">
-                                    <i class="fab fa-angellist"></i>
+                                    <i class="fab fas fa-bomb"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con body-image-con">
-                                    <i class="fas fa-basketball-ball"></i>
+                                    <i class="fas fa-bahai"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con body-image-con">
                                     <i class="fas fa-bell"></i>
@@ -166,6 +216,12 @@
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con body-image-con">
                                     <i class="fas fa-broom"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-coffee"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con body-image-con">
+                                    <i class="fas fa-eye"></i>
                                 </div>
                             </div>
                         </div>
@@ -183,31 +239,37 @@
                                     <i class="fas fa-arrow-down"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-circle-up"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
                                     <i class="fas fa-arrow-circle-down"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-circle-left"></i>
-                                </div>
-                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-arrow-circle-right"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con legs-image-con">
                                     <i class="fas fa-comment"></i>
                                 </div>
                                 <div class="col-md-6 col-lg-3 item-con legs-image-con">
-                                    <i class="fas fa-couch"></i>
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-ghost"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-glass-martini-alt"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-hippo"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-lemon"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con legs-image-con">
+                                    <i class="fas fa-mask"></i>
                                 </div>
                             </div>
                         </div>
@@ -222,25 +284,40 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
-                                    <i class="fas fa-bahai"></i>
+                                    <i class="fas fa-frown"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-award"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-flushed"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-ambulance"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-adjust"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grimace"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-chart-pie"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-beam-sweat"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-comment"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-squint"></i>
                                 </div>
-                                <div class="col-md-6 col-lg-3 item-con feet-image-con">
-                                    <i class="fas fa-couch"></i>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-squint-tears"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-stars"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-tongue"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-grin-tongue-wink"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-meh"></i>
+                                </div>
+                                <div class="col-md-6 col-lg-3 item-con selected feet-image-con">
+                                    <i class="fas fa-sad-cry"></i>
                                 </div>
                             </div>
                         </div>
