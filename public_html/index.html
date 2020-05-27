@@ -23,7 +23,7 @@
                         <br>
                         <p class="info-text">
                             Use this app to create your own custom avatar that you can use for any site!
-                            Apply different shapes from the four layers, change their site, rotation, colour
+                            Apply different shapes from the four layers, change their position, size, rotation, colour
                             and layer hierarchy. Adapt all this to your advantage to create whatever you can imagine! After you
                             have created something you are happy with click the download button and you will
                             download your creation as a JPG.
@@ -53,16 +53,16 @@
             <div class="row">
                 <div class="col-md-12 col-lg-5">
                     <div id="avatar-container" class="avatar-con">
-                        <div class="draggable">
+                        <div class="draggable head-container">
                             <i id="icon-head" data-type="head" class="icon-head fas fa-hat-wizard"></i>
                         </div>
-                        <div class="draggable">
+                        <div class="draggable body-container">
                             <i id="icon-body" data-type="body" class="icon-body fas fa-poop"></i>
                         </div>
-                        <div class="draggable">
+                        <div class="draggable legs-container">
                             <i id="icon-legs" data-type="legs" class="icon-legs fas fa-arrow-down"></i>
                         </div>
-                        <div class="draggable">
+                        <div class="draggable feet-container">
                             <i id="icon-feet" data-type="feet" class="icon-feet fas fa-bahai"></i>
                         </div>
                     </div>
@@ -78,18 +78,21 @@
                                     <input type="range" class="custom-range slider" min="1" max="360" id="rotate" data-type="head">
                                 </div>
                                 <div class="col-sm-12 my-3">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="backgroundCheck">
-                                        <label class="custom-control-label" for="backgroundCheck">Tick here to target the background colour</label>
-                                    </div>
+                                    <button id="capture" class="btn btn-primary btn-lg">
+                                        Download as JPG
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12 my-3">
-                                    <h3>Color</h3>
+                                    <h3>Colour</h3>
                                     <div class="color-picker ">
+                                    </div>
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="backgroundCheck">
+                                        <label class="custom-control-label" for="backgroundCheck">Target the background colour</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -322,13 +325,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <button id="capture" class="btn btn-primary">
-                        Download as JPG
-                    </button>
                 </div>
             </div>
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

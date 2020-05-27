@@ -42,12 +42,12 @@ $(window).on('load', function() {
 
         if (x) {
             element.css('left', x);
-            // parent.css('left', x);
+            parent.removeClass(type + '-container');
         }
 
         if (y) {
             element.css('top', y);
-            // parent.css('top', y);
+            parent.removeClass(type + '-container');
         }
     }
 

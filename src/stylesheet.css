@@ -13,6 +13,50 @@ h1 {
     color: #f8f8ff;
 }
 
+.draggable svg {
+    font-size: 150px;
+}
+
+.head-container {
+    left: 101px;
+    top: 61px;
+}
+
+.head-container svg {
+    color: rgb(189, 109, 255);
+}
+
+.body-container {
+    left: 430px;
+    top: 69px;
+}
+
+.body-container svg {
+    color: rgb(74, 57, 42);
+}
+
+.legs-container {
+    left: 110px;
+    top: 360px;
+}
+
+.legs-container svg {
+    color: rgb(234, 47, 47);
+}
+
+.feet-container {
+    left: 425px;
+    top: 340px;
+}
+
+.feet-container svg {
+    color: rgb(234, 205, 47);
+}
+
+.custom-control-label {
+    font-size: 20px;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
